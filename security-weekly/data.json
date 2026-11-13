@@ -1,0 +1,854 @@
+{
+ "date": "2026-11-13",
+ "period": "2026-11-07 ~ 2026-11-13",
+ "weather": [
+  [
+   "🔴 위기",
+   "CISA KEV(Known Exploited Vulnerabilities, 알려진 악용 취약점 목록)에 실제 악용 취약점 10건 등재 — Outlook 제로데이(NTLM(NT LAN Manager, 윈도우 인증 프로토콜) 해시 탈취), Barracuda 이메일 보안 게이트웨이 인증 우회→루트 권한 획득, OpenSSH 인증 우회 등 당사 이메일·서버 인프라 해당 제품군 포함"
+  ],
+  [
+   "🟠 경계",
+   "금융보안원 정보보호 상시평가시스템이 ‘금감원 사칭’ 허위 계정으로 침해되어 48개 금융회사 130여 개 파일 유출, 동일 그룹 계열사 KB캐피탈 업무시스템 해킹으로 1,811명 개인정보 유출"
+  ],
+  [
+   "🟡 주의",
+   "금융위원회 가상자산업권 보안 대책(해킹 의심 단계 입출금 선제 차단 허용) 발표, 문서 위장 피싱 메일을 통한 정보탈취 악성코드 유포 지속"
+  ]
+ ],
+ "summary": [
+  "글로벌 환경에서는 11월 정기 보안 업데이트(Patch Tuesday)에서 실제 악용 중인 Outlook 제로데이 CVE(Common Vulnerabilities and Exposures, 공통 취약점 식별번호)-2026-124194가 공개되었고, CISA는 2026-11-09·11-10 이틀간 Barracuda ESG(Email Security Gateway, 이메일 보안 게이트웨이), OpenSSH, Chromium, Cisco BroadWorks 등 10건을 KEV에 추가하였다.",
+  "또한 IT 원격관리 솔루션 N-able N-central의 제로데이 33건과 PoC(Proof of Concept, 개념증명) 코드가 공개되어 벤더가 호스팅 서비스를 전면 중단하였으며, Microsoft는 캄보디아 기반 금전목적 조직 Storm-3358이 AI 기반 공격 프레임워크 ARTEX로 금융기관을 공격하고 있다고 공개하였다.",
+  "국내에서는 금융권 보안 전담기관인 금융보안원의 정보보호 상시평가시스템이 2026-11-09 침해되어 48개 금융회사 자료가 유출되었고, 2026-11-10 KB금융그룹 계열사 KB캐피탈의 자동차임대자산관리시스템이 해킹되어 고객·임직원 등 1,811명의 개인정보가 유출되었다.",
+  "금융감독원은 2026-11-12 주민센터·은행 직원을 차례로 사칭하는 ‘릴레이 사칭’ 보이스피싱(사흘간 1억 원 피해)에 대해 소비자경보 ‘주의’를 발령하였다.",
+  "규제·정책 측면에서는 금융위원회가 2026-11-12 가상자산업권 보안 대책회의를 열어 해킹 의심 단계의 선제적 입출금 차단을 허용하는 비조치 의견서 발급 방침을 밝혔으며, 금융보안원 사고에 따라 금융위원회·금융감독원 현장점검과 경찰 수사가 진행 중이다.",
+  "**당사 관점의 가장 긴급한 조치 사항은 금융보안원 상시평가시스템 제출 자료의 당사 포함 여부 확인 및 관련 계정·자격증명 교체와, Outlook·Barracuda·OpenSSH 등 KEV 등재 취약점의 즉시 패치이다.**"
+ ],
+ "top3": [
+  "금융보안원 상시평가시스템 유출 자료의 당사 포함 여부를 금융보안원에 공식 확인하고, 동 시스템 사용 계정 비밀번호 교체 및 유출 서식·이용자정보를 악용한 사칭 메일 탐지 룰 적용 — 정보보호부 / 침해사고대응팀",
+  "Microsoft Office(Outlook) 11월 보안 업데이트 전사 배포 및 외부 SMB(Server Message Block, 윈도우 파일공유 프로토콜)·NTLM 아웃바운드 차단 점검, Barracuda ESG·OpenSSH(Alpine/musl) 사용 여부 확인 후 즉시 패치 — IT인프라팀 / 보안운영(SOC)",
+  "KB캐피탈 사고 관련 그룹 공동 이용 시스템·협력업체 계정 연계 현황 점검, 비정상 대량 조회 탐지 임계치 재설정 — 정보보호부 / 그룹 IT·협력업체 관리부서"
+ ],
+ "tiers": [
+  [
+   "Tier 1 공공·감독기관",
+   "CISA KEV 추가 공지 2건(11-09, 11-10), KISA OpenSSH 업데이트 권고(11-07), 금융위원회 가상자산 보안 대책(11-12), 금융감독원 소비자경보(11-12). 개인정보보호위원회·과기정통부·국가사이버안보센터·NIST·ENISA: 해당 기간 특이사항 없음"
+  ],
+  [
+   "Tier 2 보안기업",
+   "Microsoft Threat Intelligence(ARTEX/Storm-3358), Cisco Talos·CrowdStrike(11월 Patch Tuesday 분석), Huntress(N-central), AhnLab ASEC(피싱 메일 2건). S2W·Mandiant·NETSCOUT·Akamai·Cloudflare·SK쉴더스·Unit 42·Check Point·IBM X-Force·Verizon DBIR: 해당 기간 금융 특화 신규 공개 특이사항 없음"
+  ],
+  [
+   "Tier 3 전문언론",
+   "BleepingComputer, SecurityWeek, Dark Reading, The Hacker News, 데일리시큐 등에서 다수 확인"
+  ],
+  [
+   "Tier 4 일반언론",
+   "뉴스1, 국민일보, 한국일보, 파이낸셜뉴스, 세계일보, 뉴스핌 등에서 국내 사고·정책 확인"
+  ]
+ ],
+ "list": [
+  [
+   "🔴 CRITICAL",
+   "취약점 악용",
+   "Microsoft Outlook 제로데이 CVE-2026-124194 (NTLM 해시 탈취, KEV 등재)",
+   "Microsoft 365 Apps·Office LTSC 사용 기관",
+   "2026-11-10",
+   "✅",
+   "높음"
+  ],
+  [
+   "🔴 CRITICAL",
+   "취약점 악용",
+   "Barracuda ESG 인증 우회+명령 주입 체인(CVE-2026-116606/111560) 악용",
+   "Barracuda ESG 사용 기관",
+   "2026-11-09",
+   "✅",
+   "높음"
+  ],
+  [
+   "🔴 CRITICAL",
+   "취약점 악용",
+   "OpenSSH ‘*sshole’ 인증 우회 CVE-2026-123158 KEV 등재·KISA 권고",
+   "musl 기반(Alpine 등) Linux 서버·컨테이너",
+   "2026-11-07",
+   "✅",
+   "높음"
+  ],
+  [
+   "🔴 CRITICAL",
+   "취약점 악용",
+   "GPUStack·FreeSWITCH·IBM Aspera Faspex 실제 악용 취약점 KEV 등재",
+   "해당 제품 사용 기관",
+   "2026-11-09",
+   "✅",
+   "중간"
+  ],
+  [
+   "🔴 CRITICAL",
+   "취약점 악용",
+   "Chrome 제로데이 CVE-2026-125350 및 Cisco BroadWorks·Openwave KEV 등재",
+   "Chrome 사용자, 통신·메시징 플랫폼",
+   "2026-11-10",
+   "✅",
+   "중간"
+  ],
+  [
+   "🔴 CRITICAL",
+   "피싱·사회공학",
+   "주민센터·은행 ‘릴레이 사칭’ 보이스피싱 소비자경보(사흘간 1억 원 피해)",
+   "국내 금융소비자",
+   "2026-11-12",
+   "✅",
+   "높음"
+  ],
+  [
+   "🟠 HIGH",
+   "APT·해킹",
+   "금융보안원 정보보호 상시평가시스템 침해(금감원 사칭 계정, 48개사 130여 파일 유출)",
+   "금융보안원 및 48개 금융회사",
+   "2026-11-10",
+   "✅",
+   "높음"
+  ],
+  [
+   "🟠 HIGH",
+   "개인정보침해",
+   "KB캐피탈 자동차임대자산관리시스템 해킹, 1,811명 개인정보 유출",
+   "KB캐피탈 고객·임직원·협력사",
+   "2026-11-13",
+   "✅",
+   "높음"
+  ],
+  [
+   "🟠 HIGH",
+   "공급망",
+   "N-able N-central 제로데이 33건(Able2Shell) PoC 공개, 호스팅 서비스 중단",
+   "MSP(Managed Service Provider, IT관리 위탁업체) 및 고객사(은행·신협 포함)",
+   "2026-11-09",
+   "✅",
+   "높음"
+  ],
+  [
+   "🟠 HIGH",
+   "APT·해킹",
+   "Storm-3358, AI 공격 프레임워크 ARTEX로 금융기관 공격",
+   "동남아 중심 금융기관 및 일부 글로벌 대형 금융사",
+   "2026-11-06(미국시간)",
+   "✅",
+   "높음"
+  ],
+  [
+   "🟠 HIGH",
+   "랜섬웨어",
+   "Incransom, 체코 Partners Financial Services 공격 주장",
+   "Partners Financial Services(체코)",
+   "2026-11-12",
+   "⚠️",
+   "중간"
+  ],
+  [
+   "🟡 MEDIUM",
+   "취약점 악용",
+   "Microsoft Entra 장치 등록 권한상승 CVE-2026-109469 (CVSS 10.0, 서버측 조치 완료)",
+   "Entra ID 사용 기관",
+   "2026-11-10",
+   "✅",
+   "중간"
+  ],
+  [
+   "🟡 MEDIUM",
+   "정책·제도",
+   "금융위원회 가상자산업권 보안 대책(해킹 의심 시 선제 입출금 차단 비조치 의견서)",
+   "가상자산사업자",
+   "2026-11-12",
+   "✅",
+   "중간"
+  ],
+  [
+   "🟡 MEDIUM",
+   "피싱·사회공학",
+   "발주서·견적서 위장 피싱 메일로 XLoader·SnakeKeylogger 유포(ASEC)",
+   "국내 기업 구매·영업 담당자",
+   "2026-11-12~13",
+   "✅",
+   "중간"
+  ]
+ ],
+ "stats": [
+  [
+   "취약점 악용",
+   "6",
+   "🔴 5 / 🟡 1"
+  ],
+  [
+   "랜섬웨어",
+   "1",
+   "🟠 1"
+  ],
+  [
+   "APT·해킹",
+   "2",
+   "🟠 2"
+  ],
+  [
+   "개인정보침해",
+   "1",
+   "🟠 1"
+  ],
+  [
+   "공급망",
+   "1",
+   "🟠 1"
+  ],
+  [
+   "피싱·사회공학",
+   "2",
+   "🔴 1 / 🟡 1"
+  ],
+  [
+   "정책·제도",
+   "1",
+   "🟡 1"
+  ],
+  [
+   "**총계**",
+   "**14**",
+   "🔴 6 / 🟠 5 / 🟡 3"
+  ]
+ ],
+ "statsNote": "※ DDoS(Distributed Denial of Service, 분산 서비스 거부): 해당 기간 금융권 관련 신규 공개 특이사항 없음(0건으로 표에서 제외). 취약점 악용 비중(43%)이 가장 높으며, 국내 사고 2건은 모두 ‘정상 계정 위장·비정상 조회’ 유형이다.",
+ "detail": [
+  {
+   "title": "🔴 CRITICAL [취약점 악용] Microsoft Outlook CVE-2026-124194 — 실제 악용 중인 스푸핑 제로데이로 NTLM 해시 탈취",
+   "overview": "Microsoft는 2026-11-10 11월 정기 보안 업데이트에서 Outlook 스푸핑 취약점 CVE-2026-124194를 ‘악용 확인(Exploitation Detected)’으로 공개하였고, CISA는 같은 날 이를 KEV에 등재하였다. 조작된 파일을 사용자가 열면 NTLM(NT LAN Manager, 윈도우 인증 프로토콜) v2 해시가 외부로 노출된다. Microsoft는 침해지표와 기술 세부사항을 공개하지 않았다. 동월 업데이트는 집계 기준에 따라 약 1,093~1,252건의 취약점을 포함한다.",
+   "who": [
+    "누가: 공격 주체 미공개 / 피해 주체 — Microsoft 365 Apps for Enterprise, Office LTSC 2021·2024 사용 조직",
+    "언제: 2026-11-10 공개 및 패치, 같은 날 KEV 등재",
+    "어디서: Outlook 데스크톱 클라이언트(전 세계)",
+    "무엇을: 사용자 NTLMv2 인증 해시",
+    "어떻게: 조작 파일 수신 후 사용자 열람 시 외부 인증 유도(사용자 상호작용 필요, 미리보기 창은 공격 벡터 아님)",
+    "얼마나: 피해 규모 미공개"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-10",
+    "공격 유형(MITRE ATT&CK, 공격 전술·기법 지식베이스): T1566.001 Spearphishing Attachment(첨부파일 스피어피싱), T1187 Forced Authentication(강제 인증 유도)",
+    "피해 규모: 미공개"
+   ],
+   "cond": [
+    "CVE: CVE-2026-124194 (CVSS 6.5 / Moderate, 익스플로잇 성숙도 High)",
+    "영향 버전: Microsoft 365 Apps for Enterprise(32/64비트), Office LTSC 2021·2024",
+    "CISA KEV 등재 여부: 예(2026-11-10)",
+    "패치 기한: 2026-11-24(CISA 연방기관 기준)",
+    "유출 항목: NTLMv2 해시",
+    "관련 규제: 전자금융거래법 제21조(안전성 확보의무), 전자금융감독규정 — 조문 확인 필요"
+   ],
+   "src": [
+    [
+     "[T3] BleepingComputer / Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day / 2026-11-10",
+     "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/"
+    ],
+    [
+     "[T2] Cisco Talos / Microsoft Patch Tuesday for November 2026 / 2026-11-10",
+     "https://blog.talosintelligence.com/microsoft-patch-tuesday-for-november-2026/"
+    ],
+    [
+     "[T1] CISA / CISA Adds Six Known Exploited Vulnerabilities to Catalog / 2026-11-10",
+     "https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (3개 소스 / 최고 신뢰도: T1)",
+   "risk": "실제 악용과 KEV 등재가 확인된 취약점으로, 패치 지연 중 침해가 발생할 경우 전자금융거래법상 안전성 확보의무 이행 여부가 감독 검사에서 쟁점이 된다. CVSS는 6.5로 낮으나 탈취된 해시는 내부 인증 자원 접근(릴레이·오프라인 크래킹)에 활용되므로 운영 리스크는 점수보다 크다.",
+   "impact": "Outlook이 전 직원 표준 메일 클라이언트이고 외부로 NTLM 인증이 허용된 경우, 임직원 계정 해시가 유출되어 그룹웨어·내부 업무시스템 등 NTLM 인증 자원에 대한 계정 도용으로 이어질 수 있다. 특히 금융보안원 유출 서식을 이용한 사칭 메일과 결합될 경우 정보보호·IT 담당자가 우선 표적이 된다.",
+   "action": "① 11월 Office 보안 업데이트를 정보보호·IT·임원 단말부터 즉시 배포 — IT인프라팀(PMS, 패치관리시스템). ② 방화벽에서 외부 대상 SMB(TCP 445)·WebDAV 아웃바운드 차단 및 ‘Restrict NTLM: Outgoing NTLM traffic to remote servers’ 정책 점검, SIEM(Security Information and Event Management, 보안 이벤트 통합관리)에 Outlook 프로세스의 외부 인증 시도 탐지 룰 추가 — 보안운영(SOC, Security Operations Center)."
+  },
+  {
+   "title": "🔴 CRITICAL [취약점 악용] Barracuda ESG CVE-2026-116606/111560 — 비인증 설정 가져오기 API 우회 후 루트 권한 명령 실행",
+   "overview": "Barracuda는 2026-11-09 자사 권고문에 Email Security Gateway 취약점이 소수 조직에서 실제 악용되었다는 내용을 추가하였고, CISA는 2026-11-10 두 취약점을 KEV에 등재하며 연방기관 조치 기한을 2026-11-13으로 설정하였다. CVE-2026-116606은 관리자 UI의 설정 가져오기 API를 인증 없이 호출할 수 있는 인증 우회이며, 시간대 필드 명령 주입(CVE-2026-111560)과 연계하면 비인증 원격 공격자가 루트 권한으로 코드를 실행할 수 있다. 패치는 2026-11-02 배포되었다. 보안기업 Previdian은 2026-11-09~11 기간 3개국 15개 IP에서 17건의 공격 시도를 관측하였다.",
+   "who": [
+    "누가: 공격 주체 미공개 / 피해 주체 — Barracuda ESG 사용 조직(소수 조직 악용 확인)",
+    "언제: 패치 2026-11-02, 악용 공지 2026-11-09, KEV 등재 2026-11-10",
+    "어디서: Barracuda ESG 관리 인터페이스(인터넷 노출 시)",
+    "무엇을: 메일 게이트웨이 장비 루트 권한",
+    "어떻게: 인증 우회 + OS 명령 주입 체인",
+    "얼마나: 피해 조직 수 미공개"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-09",
+    "공격 유형: T1190 Exploit Public-Facing Application(공개 서비스 취약점 악용), T1059.004 Unix Shell(유닉스 셸 명령 실행)",
+    "피해 규모: 조사 중(‘소수 조직’으로만 공개)"
+   ],
+   "cond": [
+    "CVE: CVE-2026-116606 (CVSS 9.3 / Critical), CVE-2026-111560 (CVSS 8.6 / High)",
+    "영향 버전: Barracuda ESG 펌웨어 9.4.0.030 미만(111560은 복수 Barracuda 제품 영향)",
+    "CISA KEV 등재 여부: 예(2026-11-10)",
+    "패치 기한: 2026-11-13(CISA 연방기관 기준)",
+    "유출 항목: 미공개",
+    "관련 규제: 전자금융감독규정(해킹 등 방지대책) — 조문 확인 필요"
+   ],
+   "src": [
+    [
+     "[T3] SecurityWeek / Recently Patched Barracuda Vulnerabilities Exploited in Attacks / 2026-11-10",
+     "https://www.securityweek.com/recently-patched-barracuda-vulnerabilities-exploited-in-attacks/"
+    ],
+    [
+     "[T1] CISA / CISA Adds Six Known Exploited Vulnerabilities to Catalog / 2026-11-10",
+     "https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (2개 소스 + 벤더 공식 권고 / 최고 신뢰도: T1)",
+   "risk": "CVSS 9.3 및 KEV 등재로 [심각도 분류 기준] CRITICAL 요건을 충족한다. 이메일 게이트웨이는 고객·제휴사와의 공식 통신 경로이므로 침해 시 메일 열람·위변조에 따른 개인정보보호법 제29조(안전조치의무) 및 전자금융거래법상 안전성 확보의무 이슈가 동반된다.",
+   "impact": "당사 또는 그룹사·제휴사가 Barracuda ESG를 사용하고 관리 UI가 외부에 노출된 경우, 메일 게이트웨이가 루트 권한으로 장악되어 송수신 메일 열람, 악성 메일 화이트리스트 등록, 내부망 침투 거점화가 가능하다. 과거 Barracuda ESG 침해(2023년) 사례처럼 패치 이후에도 백도어가 잔존할 수 있다.",
+   "action": "① 당사·주요 제휴사(콜센터, 결제대행, 마케팅 위탁사)의 Barracuda 제품 사용 여부를 금일 중 조사, 사용 시 9.4.0.030 이상 적용 및 관리 UI 인터넷 차단 — IT인프라팀 / 협력업체관리. ② 2026-11-02 이전부터 노출되었던 장비는 설정 가져오기 API 호출 로그·신규 계정·cron 변경 여부 침해 흔적 점검 — 침해사고대응팀."
+  },
+  {
+   "title": "🔴 CRITICAL [피싱·사회공학] 주민센터·은행 ‘릴레이 사칭’ 보이스피싱 — 다기관 순차 사칭으로 사흘간 1억 원 편취",
+   "overview": "금융감독원은 2026-11-12 주민센터 직원을 사칭한 신종 보이스피싱 피해가 확인되었다며 소비자경보 ‘주의’를 발령하였다. 사기범은 신분증 도용을 빌미로 주민센터·은행 등 여러 기관 관계자를 차례로 등장시키고, 피해자가 확인차 건 전화번호도 사기범이 알려준 번호였다. 금감원이 공개한 사례의 피해자는 사흘 동안 1억 원을 송금하였다. 금감원은 사기범이 법원·택배·카드 배송 등 일상적 요소를 활용할 수 있다고 경고하였다. 별도로 금융권 정보유출 2차 피해 소비자경보 ‘주의’ 및 특별대응기간이 연말까지 연장되어 있다.",
+   "who": [
+    "누가: 공격 주체 미공개(수사 여부 미공개) / 피해 주체 — 국내 금융소비자",
+    "언제: 2026-11-12 소비자경보 발령",
+    "어디서: 전화·문자 채널(국내)",
+    "무엇을: 피해자 예금(계좌이체)",
+    "어떻게: 공공기관·금융기관 순차 사칭, 확인 전화번호 위장",
+    "얼마나: 공개 사례 1건 기준 1억 원(전체 피해 규모 미공개)"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-12",
+    "공격 유형: T1566.004 Spearphishing Voice(음성 피싱), T1656 Impersonation(사칭)",
+    "피해 규모: 공개 사례 1억 원(전체 조사 중)"
+   ],
+   "cond": [
+    "관련 규제: 전기통신금융사기 피해 방지 및 피해금 환급에 관한 특별법, 전자금융거래법 — 조문 확인 필요"
+   ],
+   "src": [
+    [
+     "[T4] 뉴스핌 / 금감원 ‘주민센터 사칭 신종 보이스피싱 주의’…사흘 만에 1억원 피해 / 2026-11-12",
+     "https://www.newspim.com/news/view/20261112001185"
+    ],
+    [
+     "[T4] 공감신문 / 금감원이 경고한 새로운 보이스피싱 수법 / 2026-11-12",
+     "https://www.gokorea.kr/news/articleView.html?idxno=885293"
+    ],
+    [
+     "[T4] 테크M / 금융권 정보유출 2차 피해 대응, 연말까지 연장…소비자경보 ‘주의’ 유지 / 2026-11-06",
+     "https://www.techm.kr/news/articleView.html?idxno=157019"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (금융감독원 공식 발표 기반 2개 이상 보도 / 최고 신뢰도: T1 금융감독원 원문 보도자료)",
+   "risk": "직접 금전 피해가 확인되어 [심각도 분류 기준] CRITICAL에 해당한다. 카드 배송·카드 명의도용을 빌미로 한 사칭은 카드사 고객 채널을 직접 겨냥하는 시나리오이며, 피해 발생 시 이상거래탐지 운영 적정성과 소비자보호 의무 이행에 대한 민원·감독 리스크가 발생한다.",
+   "impact": "사기범이 ‘카드 배송’ 또는 ‘KB국민카드 고객센터’를 순차 사칭 단계에 포함하는 경우, 당사 고객이 위장 번호로 전화를 걸어 카드론·현금서비스 실행 및 이체를 하게 될 수 있다. 최근 금융권 연쇄 정보유출로 실명·연락처 확보가 용이해진 상황이므로 표적형 접근 가능성이 높아진다.",
+   "action": "① FDS(Fraud Detection System, 이상거래탐지시스템)에 ‘고령·단기간 카드론·현금서비스 실행 후 즉시 이체’ 패턴 룰 강화 및 콜센터 상담 스크립트에 ‘당사는 다른 기관 번호로 연결하지 않음’ 안내 추가 — 리스크관리부 FDS팀 / 고객센터. ② 앱 푸시·알림톡으로 릴레이 사칭 주의 안내 발송 — 금융소비자보호부."
+  },
+  {
+   "title": "🟠 HIGH [APT·해킹] 금융보안원 정보보호 상시평가시스템 — 금감원 명의 허위 계정 생성으로 48개 금융회사 자료 유출",
+   "overview": "금융보안원은 2026-11-09 오후 정보보호 상시평가시스템에서 외부의 비정상적 접근에 따른 자료 유출을 확인하고 접속을 차단하였다. 공격자는 ‘금융감독원’ 명의로 계정을 허위 생성하여 접근하였으며, 원래 승인 및 2단계 인증이 필요한 계정 생성 절차가 우회된 경위는 조사 중이다. 공격자는 수백 개의 IP를 바꿔가며 접속하였다. 현재까지 48개 금융회사의 130여 개 파일이 유출되었으며 행정서식 약 200건, 개인정보 300여 건, 마스킹된 시스템 이용자 정보 350여 건이 포함되었다. 금융보안원은 고객 민감정보와 금융회사 보안정보는 포함되지 않았다고 밝혔고, 금융위원회·금융감독원 현장점검과 서울경찰청 사이버수사대 수사가 진행 중이다.",
+   "who": [
+    "누가: 공격 주체 조사 중 / 피해 주체 — 금융보안원 및 상시평가 자료를 제출한 48개 금융회사",
+    "언제: 2026-11-09 발생·차단, 2026-11-10 공개",
+    "어디서: 금융보안원 정보보호 상시평가시스템(국내)",
+    "무엇을: 금융회사 제출 파일(행정서식, 금융사 직원 개인정보, 시스템 이용자 정보)",
+    "어떻게: 감독기관 명의 허위 계정 생성, 승인·2단계 인증 우회(방법 조사 중), 다수 IP 변경 접속",
+    "얼마나: 48개사 130여 파일, 개인정보 300여 건 + 마스킹 이용자정보 350여 건(추가 조사 중)"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-09 / 2026-11-10",
+    "공격 유형: T1136 Create Account(계정 생성), T1090 Proxy(다수 IP 경유 접속), T1213 Data from Information Repositories(정보 저장소 자료 수집)",
+    "피해 규모: 48개 금융회사 130여 개 파일"
+   ],
+   "cond": [
+    "유출 항목: 개인신용정보 동의서 샘플 등 행정서식, 금융회사 직원 개인정보, 마스킹된 시스템 이용자 정보",
+    "관련 규제: 개인정보 보호법 제34조(개인정보 유출 등의 통지·신고), 전자금융거래법(침해사고 통지) — 조문 확인 필요"
+   ],
+   "src": [
+    [
+     "[T4] 뉴스1 / 금감원 사칭 계정으로 금융보안원 뚫었다…경찰도 수사 착수(종합) / 2026-11-11",
+     "https://www.news1.kr/finance/bank/6350751"
+    ],
+    [
+     "[T4] 국민일보 / ‘문지기’ 금융보안원까지 해킹⋯ 금융기관 관련 정보 일부 유출 / 2026-11-10",
+     "https://www.kmib.co.kr/article/20261110502281"
+    ],
+    [
+     "[T3] 데일리시큐 / 금융보안원 해킹, 위탁한 금융위원회도 책임 면할 수 없다 / 2026-11-11",
+     "https://www.dailysecu.com/news/articleView.html?idxno=209455"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (금융보안원 공식 발표 + 독립 보도 3건 / 최고 신뢰도: T1 금융보안원 발표)",
+   "risk": "국내 피해가 확인되고 금융권 직접 연관 사건으로 HIGH에 해당한다. 당사가 48개사에 포함되고 직원 개인정보가 유출된 경우 당사는 개인정보처리자로서 정보주체 통지 대상 여부를 판단해야 하며, 유출 행정서식이 당사 내부 양식인 경우 사칭 공격 소재로 악용될 수 있다. 금융권 공동 인프라 침해로 감독당국의 외부접점·위탁시스템 점검(11월 말·12월 말 기한 전수점검)이 강화될 것으로 판단된다.",
+   "impact": "당사 정보보호 담당자 실명·연락처·계정 정보가 유출 파일에 포함된 경우, 공격자는 이를 이용해 ‘금융보안원·금감원’을 사칭한 정교한 스피어피싱이나 보안평가 자료 추가 요청 메일을 발송할 수 있다. 상시평가시스템 계정과 동일한 비밀번호를 사내 시스템에서 재사용하는 경우 계정 도용으로 확대될 수 있다.",
+   "action": "① 금융보안원에 당사 포함 여부·유출 파일 목록 공식 요청, 동 시스템 계정 비밀번호 즉시 변경 및 재사용 여부 점검 — 정보보호부. ② 메일보안 솔루션에 금융보안원·금감원 유사 도메인 및 발신자 사칭 탐지 룰 적용, 담당자 대상 사칭 주의 공지 — 침해사고대응팀."
+  },
+  {
+   "title": "🟠 HIGH [개인정보침해] KB캐피탈 자동차임대자산관리시스템 — 국내 IP 다수 비정상 조회로 1,811명 개인정보 유출",
+   "overview": "KB금융그룹 계열사 KB캐피탈은 2026-11-10 자동차임대자산관리시스템에서 국내 IP의 다수 비정상 조회 시도를 확인하고 시스템·서버 운영을 중단하였으며, 같은 날 금융감독원에 보고하였다. 2026-11-13 공지에 따르면 고객 20명과 협력업체 직원·임직원 1,791명 등 총 1,811명의 개인정보가 유출되었다. 회사는 해당 시스템이 금융거래와 무관한 내부 업무시스템이라고 설명하였고, 손해 발생 시 전액 배상 방침과 홈페이지 개인별 유출 조회 서비스를 안내하였다. 침입 경로와 조회 제한 장치의 작동 여부는 공개되지 않았다.",
+   "who": [
+    "누가: 공격 주체 조사 중 / 피해 주체 — KB캐피탈 고객·임직원·협력업체 직원",
+    "언제: 2026-11-10 탐지·차단·보고, 2026-11-13 공지",
+    "어디서: KB캐피탈 자동차임대자산관리시스템(국내)",
+    "무엇을: 고객 이름·생년월일·휴대폰번호·주소·차량번호, 임직원·협력사 사용자 계정·이름·연락처·부서·회사명·직함",
+    "어떻게: 국내 IP에서 다수 비정상 조회(초기 침투 경로 미공개)",
+    "얼마나: 1,811명(고객 20명, 임직원·협력사 1,791명)"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-10 / 2026-11-13",
+    "공격 유형: T1213 Data from Information Repositories(정보 저장소 자료 수집), 초기 침투 기법 조사 중",
+    "피해 규모: 1,811명"
+   ],
+   "cond": [
+    "유출 항목: 이름, 생년월일, 휴대폰번호, 주소, 차량번호, 사용자 계정(사번 등 ID), 부서명, 회사명, 직함",
+    "관련 규제: 개인정보 보호법 제29조(안전조치의무)·제34조(유출 등의 통지·신고), 신용정보법 제39조의4(개인신용정보 누설 통지) — 적용 여부 조문 확인 필요"
+   ],
+   "src": [
+    [
+     "[T4] 한국일보 / KB캐피탈에서도 개인정보 유출… 고객·협력사 등 1800여 명 피해 / 2026-11-13",
+     "https://www.hankookilbo.com/news/article/A2026111314070005317"
+    ],
+    [
+     "[T4] 이코노미사이언스 / KB캐피탈도 해킹 피해…고객·임직원 등 1811명 개인정보 유출 / 2026-11-13",
+     "https://www.e-science.co.kr/news/articleView.html?idxno=139782"
+    ],
+    [
+     "[T4] 파이낸셜뉴스 / KB캐피탈, 해킹에 개인정보 유출…고객·임직원 등 1800여명 / 2026-11-13",
+     "https://www.fnnews.com/news/202611130929319866"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (회사 공식 공지 + 독립 보도 3건 / 최고 신뢰도: T4, 회사 공지 기반)",
+   "risk": "동일 그룹 계열사 사고로 ‘KB’ 브랜드 전반의 평판 리스크와 그룹 차원의 감독당국 점검 확대 가능성이 있다. 유출된 임직원·협력사 사용자 계정(ID)·소속 정보는 계정 대입 공격과 사칭의 기초 정보로 활용될 수 있다.",
+   "impact": "그룹 공동 협력업체(탁송·차량관리·IT 유지보수 등)가 당사와도 계약 관계에 있는 경우, 유출된 협력사 직원 계정명·연락처를 이용한 당사 대상 사칭·계정 탈취 시도가 발생할 수 있다. 또한 그룹 공통 계정 체계(사번 기반 ID)를 당사가 공유하는 경우 ID 노출로 비밀번호 대입 공격의 표적이 될 수 있다.",
+   "action": "① 유출 협력업체·임직원 명단과 당사 계정·출입 권한 보유자 대조, 해당 계정 비밀번호 강제 변경 및 MFA(Multi-Factor Authentication, 다중 인증) 적용 확인 — 정보보호부 / 그룹 IT. ② 내부 업무시스템 대량·반복 조회 탐지 임계치 재설정 및 외부 접점 관리대장 등재 여부 점검(11월 말 감독당국 점검 대응과 연계) — 보안운영(SOC)."
+  },
+  {
+   "title": "🟠 HIGH [공급망] N-able N-central — 제로데이 33건(Able2Shell) PoC 공개로 RMM 호스팅 서비스 전면 중단",
+   "overview": "IT 원격관리 솔루션 N-able N-central에 대해 한 연구자가 ‘Able2Shell’로 명명한 제로데이 33건과 PoC 코드를 공개하자, N-able은 2026-11-09 호스팅 N-central 환경을 전 세계적으로 오프라인 전환하였다. Huntress는 공개된 익스플로잇 중 3건이 RCE(Remote Code Execution, 원격코드 실행), 1건이 루트 권한상승으로 이어진다고 분석하였다. N-able은 신규 공개 취약점의 실제 악용은 관측되지 않았다고 밝혔고, 긴급 핫픽스(2026.4 HF2)가 배포된 것으로 보도되었다. 별도로 랜섬웨어 조직 Storm-1175가 N-central 취약점 악용과 연계되어 미국 은행 5곳과 신협 1곳을 공격했다고 주장하였으며, 그중 Insight Credit Union이 2026-11-06 주(州) 법무장관에 유출을 신고하였다.",
+   "who": [
+    "누가: 취약점 공개 주체 — 외부 연구자 / 피해 주체 — N-central 사용 MSP(Managed Service Provider, IT관리 위탁업체) 및 고객사",
+    "언제: 2026-11-09 호스팅 서비스 중단",
+    "어디서: N-central 호스팅·자체 구축 서버(전 세계)",
+    "무엇을: RMM(Remote Monitoring and Management, 원격관리) 콘솔 및 하위 관리 단말 전체",
+    "어떻게: 공개 PoC를 통한 RCE·권한상승",
+    "얼마나: 신규 취약점 피해 미확인 / Storm-1175 관련 확인 피해 2개 기관(Sawyer Savings Bank 16,069명 등)"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-09",
+    "공격 유형: T1190 Exploit Public-Facing Application, T1199 Trusted Relationship(신뢰 관계 악용), T1072 Software Deployment Tools(배포 도구 악용)",
+    "피해 규모: 신규 취약점 조사 중"
+   ],
+   "cond": [
+    "CVE: CVE-2026-125878~125883, CVE-2026-91000(핫픽스 대상으로 보도, 벤더 권고 확인 필요)",
+    "영향 버전: N-central 2026.4 HF2 미만으로 보도 — 벤더 공식 영향 버전 미공개",
+    "CISA KEV 등재 여부: 신규 취약점 아니오(과거 CVE-2026-86218은 2026-09-08 등재)",
+    "패치 기한: 해당 없음(벤더 핫픽스 즉시 적용 권고)",
+    "관련 규제: 전자금융감독규정(정보처리 업무 위탁) — 조문 확인 필요"
+   ],
+   "src": [
+    [
+     "[T3] SecurityWeek / N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days / 2026-11-10",
+     "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+    ],
+    [
+     "[T3] Dark Reading / N-able Takes N-central Platform Offline After Discovery of 33 Flaws / 2026-11-10",
+     "https://www.darkreading.com/endpoint-security/n-able-n-central-offline-33-flaws"
+    ],
+    [
+     "[T2] Huntress / Critical N-able N-central Vulnerability and Active Exploitation / 2026-11",
+     "https://www.huntress.com/blog/n-able-vulnerability-exploitation"
+    ],
+    [
+     "[T4] American Banker / Ransomware crew claims 5 banks and a CU; 2 confirm breaches / 2026-11",
+     "https://www.americanbanker.com/news/ransomware-crew-claims-5-banks-and-a-cu-2-confirm-breaches"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (4개 소스 / 최고 신뢰도: T2)",
+   "risk": "RMM 콘솔 장악 시 관리 대상 전 단말을 동시에 통제할 수 있어, 공급망 침해로 복수 금융회사가 동시 영향을 받을 수 있는 구조로 HIGH에 해당한다. 위탁업체 경유 침해 시 전자금융감독규정상 위탁 관리 책임과 수탁사 관리 실태가 점검 대상이 된다.",
+   "impact": "당사 콜센터·제휴 가맹점 관리·IT 유지보수 위탁사가 N-central 또는 유사 RMM으로 당사 연계 단말을 관리하는 경우, RMM 서버 침해가 위탁사 경유 당사 업무망 접근 및 랜섬웨어 일괄 배포로 이어질 수 있다. 미국 은행·신협 피해 주장 사례가 동일 공격 경로를 보여준다.",
+   "action": "① 주요 수탁사·제휴사 대상 RMM 솔루션 사용 현황(N-central 포함) 긴급 설문 및 패치·인터넷 노출 여부 확인 — 협력업체관리 / 정보보호부. ② 당사 내부 원격관리 도구 허용 목록 외 RMM 에이전트 실행 탐지 정책 적용 — 보안운영(SOC) / EDR(Endpoint Detection and Response, 단말 탐지·대응)."
+  },
+  {
+   "title": "🟠 HIGH [APT·해킹] Storm-3358 — 오픈소스 AI 공격 프레임워크 ARTEX로 금융기관 외부 접점 자동 공격",
+   "overview": "Microsoft Threat Intelligence는 2026-11-06(미국시간) 캄보디아 기반 금전목적 조직 Storm-3358이 2026년 10월부터 오픈소스 에이전트형 AI 공격 프레임워크 ARTEX를 금융기관 공격에 사용하고 있다고 공개하였다. 이 조직은 ARTEX와 자동화 스캐너로 인터넷 노출 시스템을 탐색한 뒤 익명 파일 업로드, SSRF(Server-Side Request Forgery, 서버측 요청 위조) 등의 취약점을 악용하고, WISP·vshell·AdaptixC2 원격접근도구로 지속성과 내부 확산을 확보한다. 표적은 주로 동남아 금융기관이며 일부 글로벌 대형 금융기관도 포함된다. Microsoft는 피해 기관명, 피해 수, 손실 규모를 공개하지 않았다.",
+   "who": [
+    "누가: Storm-3358(Microsoft 명명) / 피해 주체 — 동남아 중심 금융기관 및 일부 글로벌 대형 금융기관",
+    "언제: 2026-10 활동 개시, 2026-11-06(미국시간) 공개",
+    "어디서: 금융기관 인터넷 노출 웹·클라우드 시스템",
+    "무엇을: 외부 접점 서버 및 내부망 거점",
+    "어떻게: AI 기반 자동 정찰·취약점 악용, 원격접근도구 설치",
+    "얼마나: 미공개"
+   ],
+   "meta": [
+    "발생·공개일: 2026-11-06(미국시간, KST 2026-11-07)",
+    "공격 유형: T1595 Active Scanning(능동 스캐닝), T1190 Exploit Public-Facing Application, T1505.003 Web Shell, T1219 Remote Access Software",
+    "피해 규모: 미공개"
+   ],
+   "cond": [
+    "관련 규제: 전자금융감독규정(외부 접점 관리) — 조문 확인 필요. 금융위원회 보안체계 혁신방안(2026-11-05)상 외부 접점 전수점검과 연계"
+   ],
+   "src": [
+    [
+     "[T2] Microsoft Security Blog / ARTEX abuse expands as cybercriminals target financial sector / 2026-11-06",
+     "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/"
+    ],
+    [
+     "[T3] Cybersecurity Dive / Financially motivated threat cluster uses AI-enabled tools against banking sector / 2026-11",
+     "https://www.cybersecuritydive.com/news/financially-motivated-threat-ai-tools-banking-artex/874116/"
+    ]
+   ],
+   "xcheck": "교차확인: ✅ 확인 (보안기업 공식 보고서 + 독립 보도 / 최고 신뢰도: T2)",
+   "risk": "금융권을 직접 표적으로 한 공격 벡터가 확인되어 HIGH에 해당한다. AI 자동화로 정찰-악용 주기가 단축되어, 관리대장에 누락된 외부 접점(테스트·이벤트·제휴 페이지)이 우선 공격 대상이 된다. 이는 감독당국이 요구한 외부 접점 전수점검(11월 말 관리대장 등재분, 12월 말 전체)과 직결된다.",
+   "impact": "당사 인터넷 노출 자산 중 파일 업로드 기능이나 URL 호출 기능이 있는 이벤트·제휴·채용 페이지가 관리대장에 누락된 경우, 자동화된 스캐닝으로 빠르게 식별되어 웹셸 설치 후 내부 확산 거점이 될 수 있다.",
+   "action": "① EASM(External Attack Surface Management, 외부 공격표면관리) 도구로 당사·자회사 인터넷 노출 자산을 재식별하고 관리대장 대비 누락 자산 즉시 차단 — 정보보호부 / IT인프라팀. ② WAF(Web Application Firewall, 웹방화벽)에 익명 업로드·SSRF 차단 룰 점검, Microsoft 공개 IOC(Indicator of Compromise, 침해지표)를 검증 후 SIEM 반영 — 보안운영(SOC)."
+  }
+ ],
+ "actions": [
+  [
+   "🔴 1순위",
+   "금융보안원 상시평가시스템 유출 자료의 당사 포함 여부 공식 확인, 관련 계정 비밀번호 변경·재사용 점검, 금보원·금감원 사칭 메일 탐지 룰 적용",
+   "정보보호부 / 침해사고대응팀",
+   "**즉시**",
+   "금융보안원 침해"
+  ],
+  [
+   "🔴 1순위",
+   "Office(Outlook) 11월 보안 업데이트 전사 배포(CVE-2026-124194), 외부 SMB·NTLM 아웃바운드 차단 점검",
+   "IT인프라팀(PMS) / SOC",
+   "**즉시**",
+   "Outlook 제로데이"
+  ],
+  [
+   "🔴 1순위",
+   "Barracuda 제품 사용 여부 조사 및 9.4.0.030 이상 적용, 관리 UI 외부 차단, 침해 흔적 점검(당사·주요 제휴사)",
+   "IT인프라팀 / 협력업체관리",
+   "**즉시**",
+   "Barracuda ESG"
+  ],
+  [
+   "🔴 1순위",
+   "Alpine/musl 기반 서버·컨테이너 이미지 OpenSSH 10.6p2 업데이트, 미조치 시 PasswordAuthentication 비활성화",
+   "클라우드·플랫폼팀",
+   "**즉시**",
+   "OpenSSH *sshole"
+  ],
+  [
+   "🔴 1순위",
+   "Chrome 157.0.8103.50 이상 강제 업데이트, FDS 릴레이 사칭 패턴 룰 강화 및 고객 안내 발송",
+   "단말관리 / FDS팀 / 금융소비자보호부",
+   "**24시간 이내**",
+   "Chrome 제로데이, 릴레이 사칭"
+  ],
+  [
+   "🟠 2순위",
+   "KB캐피탈 유출 협력사·임직원 명단과 당사 계정 대조, 비밀번호 강제 변경 및 MFA 적용 확인",
+   "정보보호부 / 그룹 IT",
+   "**금주 내**",
+   "KB캐피탈 해킹"
+  ],
+  [
+   "🟠 2순위",
+   "주요 수탁사·제휴사 RMM(N-central 등) 사용 현황 긴급 설문 및 패치 확인, 비인가 RMM 에이전트 탐지 정책 적용",
+   "협력업체관리 / SOC(EDR)",
+   "**금주 내**",
+   "N-able N-central"
+  ],
+  [
+   "🟠 2순위",
+   "인터넷 노출 자산 재식별(EASM) 및 관리대장 대비 누락 자산 차단, WAF 익명 업로드·SSRF 룰 점검",
+   "정보보호부 / IT인프라팀",
+   "**금주 내**",
+   "Storm-3358 ARTEX"
+  ],
+  [
+   "🟡 3순위",
+   "GPUStack·FreeSWITCH·IBM Aspera Faspex·Cisco BroadWorks 사용 여부 자산 대조 및 패치",
+   "IT인프라팀",
+   "**이달 내**",
+   "KEV 11-09/11-10"
+  ],
+  [
+   "🟡 3순위",
+   "구매·영업 부서 대상 문서 위장 피싱 모의훈련 및 브라우저 저장 비밀번호 사용 금지 정책 점검",
+   "정보보호부(보안교육)",
+   "**이달 내**",
+   "ASEC 피싱 메일"
+  ],
+  [
+   "🟡 3순위",
+   "Entra ID 장치 등록 감사 로그 점검(서버측 조치 완료 확인), 조건부 접근 정책 재검토",
+   "클라우드·플랫폼팀",
+   "**이달 내**",
+   "Entra CVE-2026-109469"
+  ]
+ ],
+ "reports": [
+  {
+   "title": "[보고] 금융보안원 정보보호 상시평가시스템 침해 사고 분석 및 대응 리포트",
+   "sections": [
+    {
+     "h": "1. 사고 개요 및 규모",
+     "items": [
+      "발견 시점: 2026-11-09 오후 (금융보안원 자체 탐지, 같은 날 접속 차단 및 서비스 중단)",
+      "유출·피해 규모: 48개 금융회사 130여 개 파일 (개인정보 300여 건, 마스킹된 시스템 이용자 정보 350여 건, 행정서식 약 200건 / 추가 유출 여부 조사 중)",
+      "피해 항목: 개인신용정보 동의서 샘플 등 행정서식, 금융회사 직원 개인정보, 마스킹된 이용자 정보. 금융보안원은 고객 민감정보·금융회사 보안정보는 미포함이라고 발표"
+     ]
+    },
+    {
+     "h": "2. 사고 원인 및 경위",
+     "items": [
+      "##기술적 원인",
+      "공격 유형: 감독기관(금융감독원) 명의 허위 계정 생성 — T1136 Create Account, 다수 IP 변경 접속 — T1090 Proxy, 저장 자료 수집 — T1213",
+      "계정 생성 시 필요한 승인 및 2단계 인증이 우회되었으며, 우회 방법은 조사 중",
+      "##관리적 원인",
+      "금융보안원 고위 관계자는 핵심 인력이 모의해킹 전담 조직에 집중되어 자체 보안 역량이 상대적으로 부족했다고 언급(파이낸셜뉴스 보도). 공식 원인 조사 결과는 미공개",
+      "발견 배경: 금융보안원이 비정상 접근에 따른 유출을 확인 후 공지, 언론 보도로 공개",
+      "발생 추정 시점: 2026-11-09 (금융보안원 발표)"
+     ]
+    },
+    {
+     "h": "3. 현재 대응 상황",
+     "items": [
+      "즉시 대응: 상시평가 사이트 접속 차단 및 서비스 중단 유지",
+      "보안 강화: 미공개",
+      "유관기관 신고: 금융위원회·금융감독원 현장점검 착수, 서울경찰청 사이버수사대 수사 착수"
+     ]
+    },
+    {
+     "h": "4. 경영진 제언",
+     "items": [
+      "##비즈니스 리스크",
+      "법적·규제: 당사 직원 개인정보가 포함된 경우 개인정보 보호법 제34조에 따른 통지 요건 검토 필요. 금융권 공동 인프라 침해로 금융위원회 보안체계 혁신방안의 외부접점·내부통제 전수점검(2026-11 말·2026-12 말 기한)에 대한 감독 강도가 높아질 것으로 판단",
+      "평판·고객: 고객 정보 유출은 발표상 없음. 다만 금융권 연쇄 사고로 고객 불안 증가 및 사칭 사기 증가 가능",
+      "재무·운영: 상시평가시스템 중단에 따른 평가 일정 지연, 유출 서식 악용 사칭 공격 대응 비용",
+      "##대응 전략",
+      "즉시 (24시간 이내): 금융보안원에 당사 포함 여부·유출 파일 목록 공식 요청, 동 시스템 계정 비밀번호 변경, 메일보안 솔루션에 사칭 탐지 룰 적용 — 정보보호부 / 메일보안시스템",
+      "단기 (1~2주 이내): 외부 기관 제출 자료의 최소화·마스킹 기준 수립, 감독·유관기관 포털 계정 관리대장 작성 — 정보보호부",
+      "중장기 (1분기 이내): 외부 기관·위탁 시스템에 제출되는 보안 자료의 데이터 분류 등급제와 제출 승인 절차 도입, 사칭 대응 위협 인텔리전스 체계 구축(인력 1명 및 TI 구독 예산 검토) — CISO"
+     ]
+    }
+   ],
+   "src": [
+    [
+     "[T4] 뉴스1 / 금감원 사칭 계정으로 금융보안원 뚫었다…경찰도 수사 착수(종합) / 2026-11-11",
+     "https://www.news1.kr/finance/bank/6350751"
+    ],
+    [
+     "[T4] 국민일보 / ‘문지기’ 금융보안원까지 해킹⋯ 금융기관 관련 정보 일부 유출 / 2026-11-10",
+     "https://www.kmib.co.kr/article/20261110502281"
+    ],
+    [
+     "[T4] 천지일보 / 금융보안원도 해킹… 48개사 130여개 파일 유출 / 2026-11-11",
+     "https://www.newscj.com/news/articleView.html?idxno=3447901"
+    ],
+    [
+     "[T3] 데일리시큐 / [금보원 해킹-3] 금융보안원 해킹, 위탁한 금융위원회도 책임 면할 수 없다 / 2026-11-11",
+     "https://www.dailysecu.com/news/articleView.html?idxno=209455"
+    ],
+    [
+     "[T4] 파이낸셜뉴스 / 체면 구긴 금융보안원… / 2026-11-11",
+     "https://www.fnnews.com/news/202611111814270736"
+    ]
+   ]
+  },
+  {
+   "title": "[보고] KB캐피탈 업무시스템 해킹 개인정보 유출 사고 분석 및 대응 리포트",
+   "sections": [
+    {
+     "h": "1. 사고 개요 및 규모",
+     "items": [
+      "발견 시점: 2026-11-10 (KB캐피탈 자체 탐지 — 국내 IP 다수 비정상 조회 시도 확인)",
+      "유출·피해 규모: 1,811명 (고객 20명, 협력업체 직원·임직원 1,791명 / 자동차임대자산관리시스템 이용자 중심)",
+      "피해 항목: 고객 — 이름, 생년월일, 휴대폰번호, 주소, 차량번호 / 임직원·협력사 — 사용자 계정(ID), 이름, 연락처, 부서명, 회사명, 직함"
+     ]
+    },
+    {
+     "h": "2. 사고 원인 및 경위",
+     "items": [
+      "##기술적 원인",
+      "공격 유형: 내부 업무시스템 대량 조회 — T1213 Data from Information Repositories / 초기 침투 경로 조사 중",
+      "##관리적 원인",
+      "조회 제한 장치 작동 여부 및 접근통제 경위 미공개(언론에서 공개 정보 부족 지적)",
+      "발견 배경: 회사 자체 탐지 후 금융감독원 보고, 2026-11-13 홈페이지 공지 및 언론 보도",
+      "발생 추정 시점: 2026-11-10 (회사 공지)"
+     ]
+    },
+    {
+     "h": "3. 현재 대응 상황",
+     "items": [
+      "즉시 대응: 해당 시스템 및 서버 운영 중단",
+      "보안 강화: 미공개",
+      "유관기관 신고: 2026-11-10 금융감독원 보고. 개인정보보호위원회·KISA 신고 여부는 미공개. 손해 발생 시 전액 배상 방침, 홈페이지 개인별 유출 조회 제공"
+     ]
+    },
+    {
+     "h": "4. 경영진 제언",
+     "items": [
+      "##비즈니스 리스크",
+      "법적·규제: KB캐피탈에 개인정보 보호법 제29조·제34조 적용 이슈. 당사는 직접 피해 확인 사실이 없으나, 그룹 공동 협력사·공통 계정 체계를 공유하는 경우 동일 취약점 존재 여부가 그룹 차원 점검 대상이 될 수 있음",
+      "평판·고객: ‘KB’ 브랜드 연쇄 노출로 당사 고객 문의·민원 증가 가능. 고객센터 응대 문구 사전 준비 필요",
+      "재무·운영: 그룹 공동 협력사 계정 재발급·점검 비용, 업무시스템 접근통제 고도화 비용",
+      "##대응 전략",
+      "즉시 (24시간 이내): 유출 협력사·임직원 명단과 당사 계정 보유자 대조, 해당 계정 비밀번호 강제 변경 — 정보보호부 / 계정관리시스템(IAM)",
+      "단기 (1~2주 이내): 내부 업무시스템 대량 조회 탐지 정책(사용자별 조회 건수 임계치, 비업무시간 조회) 재설정, 고객센터 응대 스크립트 배포 — SOC / 고객센터",
+      "중장기 (1분기 이내): 그룹 공동 협력업체 보안관리 기준 통합 및 계열사 간 침해 정보 공유 채널 상설화, 내부 업무시스템 전체 MFA·조회 마스킹 적용(예산 반영) — CISO / 그룹 정보보호협의체"
+     ]
+    }
+   ],
+   "src": [
+    [
+     "[T4] 한국일보 / KB캐피탈에서도 개인정보 유출… 고객·협력사 등 1800여 명 피해 / 2026-11-13",
+     "https://www.hankookilbo.com/news/article/A2026111314070005317"
+    ],
+    [
+     "[T4] 이코노미사이언스 / KB캐피탈도 해킹 피해…고객·임직원 등 1811명 개인정보 유출 / 2026-11-13",
+     "https://www.e-science.co.kr/news/articleView.html?idxno=139782"
+    ],
+    [
+     "[T4] 인사이트코리아 / KB캐피탈도 뚫렸다…고객·임직원 등 1811명 정보 유출 / 2026-11-13",
+     "https://www.insightkorea.co.kr/news/articleView.html?idxno=258853"
+    ],
+    [
+     "[T4] 한국아이닷컴 / ‘소비자보호 강화’ 내건 빈중일…KB캐피탈 고객정보는 유출 / 2026-11-13",
+     "https://www.hankooki.com/news/articleView.html?idxno=348443"
+    ]
+   ]
+  },
+  {
+   "title": "[보고] N-able N-central 제로데이 공개에 따른 위탁사 RMM 공급망 리스크 분석 및 대응 리포트",
+   "sections": [
+    {
+     "h": "1. 사고 개요 및 규모",
+     "items": [
+      "발견 시점: 2026-11-09 (외부 연구자의 제로데이 33건·PoC 공개, 벤더의 호스팅 서비스 오프라인 전환)",
+      "유출·피해 규모: 신규 취약점 실제 악용은 미관측(벤더 발표). 별도로 랜섬웨어 조직 Storm-1175가 미국 은행 5곳(총자산 약 61억 달러)·신협 1곳 공격을 주장, 2곳이 유출 확인(Sawyer Savings Bank 16,069명, Insight Credit Union 2026-11-06 신고)",
+      "피해 항목: Insight Credit Union 신고 기준 이름, 사회보장번호, 운전면허번호, 금융계좌 또는 결제카드 번호"
+     ]
+    },
+    {
+     "h": "2. 사고 원인 및 경위",
+     "items": [
+      "##기술적 원인",
+      "공격 유형: RMM 콘솔 RCE·권한상승 — T1190, 신뢰 관계 악용 — T1199, 배포 도구 악용 — T1072",
+      "##관리적 원인",
+      "벤더의 영향 버전·CVE·심각도 정보 공개 지연(2026-11-09 기준 미공개, Censys 지적), MSP 고객사의 위탁사 RMM 가시성 부족",
+      "발견 배경: 연구자의 공개 게시 후 보안 언론·보안기업(Huntress) 분석",
+      "발생 추정 시점: 2026-11-09 (공개 시점)"
+     ]
+    },
+    {
+     "h": "3. 현재 대응 상황",
+     "items": [
+      "즉시 대응: N-able 호스팅 N-central 전 세계 오프라인 전환",
+      "보안 강화: 긴급 핫픽스 N-central 2026.4 HF2 배포 보도(자체 구축 고객은 직접 적용 필요)",
+      "유관기관 신고: Insight Credit Union 텍사스·버몬트 주 법무장관 신고(2026-11-06). 국내 기관 신고 사항 해당 없음"
+     ]
+    },
+    {
+     "h": "4. 경영진 제언",
+     "items": [
+      "##비즈니스 리스크",
+      "법적·규제: 위탁사 경유 침해 시 전자금융감독규정상 정보처리 위탁 관리 책임 검토(조문 확인 필요), 고객 카드정보 유출 시 신용정보법 제39조의4 통지 의무 발생",
+      "평판·고객: 위탁사 경유 사고라도 고객은 당사 사고로 인식",
+      "재무·운영: 위탁사 RMM 경유 랜섬웨어 일괄 배포 시 콜센터·가맹점 지원 업무 중단",
+      "##대응 전략",
+      "즉시 (24시간 이내): 주요 수탁사(콜센터, IT 유지보수, 가맹점 관리) 대상 RMM 사용 현황 긴급 확인 요청 — 협력업체관리 / 정보보호부",
+      "단기 (1~2주 이내): 당사 단말·서버의 비인가 RMM 에이전트 탐지·차단 정책(EDR) 적용, 위탁사 원격접속 경로를 당사 통제 접근관리(PAM) 경유로 일원화 — SOC / IT인프라팀",
+      "중장기 (1분기 이내): 수탁사 보안평가 항목에 RMM·원격관리 도구 관리 기준 추가, 제3자 위험관리(TPRM) 상시 모니터링 체계 도입(외부 평가 서비스 예산 검토) — CISO / 구매부"
+     ]
+    }
+   ],
+   "src": [
+    [
+     "[T3] SecurityWeek / N-able Takes N-central Offline as Researcher Drops Over 30 Zero-Days / 2026-11-10",
+     "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+    ],
+    [
+     "[T3] Dark Reading / N-able Takes N-central Platform Offline After Discovery of 33 Flaws / 2026-11-10",
+     "https://www.darkreading.com/endpoint-security/n-able-n-central-offline-33-flaws"
+    ],
+    [
+     "[T2] Huntress / Critical N-able N-central Vulnerability and Active Exploitation / 2026-11",
+     "https://www.huntress.com/blog/n-able-vulnerability-exploitation"
+    ],
+    [
+     "[T3] CSO Online / N-able N-central gets emergency fix two days after 33 exploits published / 2026-11-11",
+     "https://www.csoonline.com/article/4247028/n-able-n-central-gets-emergency-fix-two-days-after-33-exploits-published.html"
+    ],
+    [
+     "[T4] American Banker / Ransomware crew claims 5 banks and a CU; 2 confirm breaches / 2026-11",
+     "https://www.americanbanker.com/news/ransomware-crew-claims-5-banks-and-a-cu-2-confirm-breaches"
+    ]
+   ]
+  }
+ ],
+ "selfcheck": [
+  "① 논리적 비약 여부: 없음 — 금융보안원 사건은 국내 피해·금융권 직결이나 대규모 개인정보 유출·금전 피해 요건이 확인되지 않아 HIGH로 분류하고, 경영진 의사결정 필요성에 따라 SECTION 6에 포함함.",
+  "② 추측성 표현 여부: 있음 → 수정 — ‘과시욕에 의한 공격’은 외부 인용 의견으로 공식 결론이 아니어서 본문에서 제외. 공격 주체 귀속은 Microsoft 명명(Storm-3358, Storm-1175)과 랜섬웨어 조직 자체 주장만 기재하고 국가 귀속은 하지 않음.",
+  "③ 실무 적용 가능성: 적합 — 모든 조치에 담당 부서·기한·근거 사건 명시. 단, 부서명은 일반 기능명으로 기재하였으므로 당사 조직도에 맞춰 배정 확인 필요.",
+  "④ 출처 검증 상태: ✅ 확인 13건 / ⚠️ 미확인 1건 (Incransom의 Partners Financial Services 공격 주장 — 랜섬웨어 유출사이트 추적 단일 소스)",
+  "⑤ 날짜·기간 기준 검증: KST 기준 최근 7일(2026-11-07 ~ 2026-11-13) 충족. 예외 — Microsoft ARTEX 보고서는 2026-11-06(미국시간) 게시로 KST 2026-11-07 경계에 해당하여 포함. 금융위원회 보안체계 혁신방안(2026-11-05), Crédit Mutuel Arkéa 1.33억 달러 탈취(2026-11-04 공개), Binance 63억 달러 탈취(2026-10-29)는 기간 외로 목록에서 제외하고 배경 정보로만 활용. 수집 도구 제약으로 CISA·금융위 원문 페이지 직접 열람이 불가하여 해당 원문 URL은 복수 보도로 내용을 교차 확인함."
+ ],
+ "footerSrc": [
+  "출처 Tier 1: CISA KEV 공지(2026-11-09, 11-10), KISA 보안 업데이트 권고(2026-11-07), 금융위원회(2026-11-12), 금융감독원 소비자경보(2026-11-12), 금융보안원 발표(2026-11-10)",
+  "출처 Tier 2: Microsoft Threat Intelligence, Cisco Talos, CrowdStrike, Huntress, AhnLab ASEC",
+  "출처 Tier 3: BleepingComputer, SecurityWeek, Dark Reading, CSO Online, 데일리시큐",
+  "출처 Tier 4: 뉴스1, 국민일보, 한국일보, 파이낸셜뉴스, 이코노미사이언스, 세계일보, 뉴스핌, American Banker"
+ ],
+ "listSrc": [
+  [
+   "1. Outlook CVE-2026-124194 — [T3] BleepingComputer / 2026-11-10",
+   "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/"
+  ],
+  [
+   "2. Barracuda ESG — [T3] SecurityWeek / 2026-11-10",
+   "https://www.securityweek.com/recently-patched-barracuda-vulnerabilities-exploited-in-attacks/"
+  ],
+  [
+   "3. OpenSSH *sshole — [T3] 데일리시큐(KISA 권고 인용) / 2026-11-07",
+   "https://www.dailysecu.com/news/articleView.html?idxno=209393"
+  ],
+  [
+   "4. GPUStack·FreeSWITCH·Aspera Faspex — [T1] CISA / 2026-11-09",
+   "https://www.cisa.gov/news-events/alerts/2026/11/09/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+  ],
+  [
+   "5. Chrome CVE-2026-125350 — [T3] BleepingComputer / 2026-11-09",
+   "https://bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year"
+  ],
+  [
+   "5. Cisco BroadWorks·Openwave — [T3] SecurityWeek / 2026-11-10",
+   "https://www.securityweek.com/threat-actors-exploit-openwave-cisco-broadworks-vulnerabilities/"
+  ],
+  [
+   "6. 릴레이 사칭 보이스피싱 — [T4] 뉴스핌(금감원 소비자경보) / 2026-11-12",
+   "https://www.newspim.com/news/view/20261112001185"
+  ],
+  [
+   "7. 금융보안원 침해 — [T4] 뉴스1 / 2026-11-11",
+   "https://www.news1.kr/finance/bank/6350751"
+  ],
+  [
+   "8. KB캐피탈 해킹 — [T4] 한국일보 / 2026-11-13",
+   "https://www.hankookilbo.com/news/article/A2026111314070005317"
+  ],
+  [
+   "9. N-able N-central — [T3] SecurityWeek / 2026-11-10",
+   "https://www.securityweek.com/n-able-takes-n-central-offline-as-researcher-drops-over-30-zero-days/"
+  ],
+  [
+   "10. Storm-3358 ARTEX — [T2] Microsoft Security Blog / 2026-11-06",
+   "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/"
+  ],
+  [
+   "11. Incransom 주장(⚠️ 미확인) — [기타] ransomware.live 유출사이트 추적 / 2026-11-12",
+   "https://www.ransomware.live/id/UGFydG5lcnMgRmluYW5jaWFsIFNlcnZpY2VzLCBhLnMuQGluY3JhbnNvbQ"
+  ],
+  [
+   "12. Entra CVE-2026-109469 — [T2] CrowdStrike / 2026-11-10",
+   "https://www.crowdstrike.com/en-us/blog/patch-tuesday-analysis-november-2026/"
+  ],
+  [
+   "13. 가상자산 보안 대책 — [T4] 세계일보(금융위 발표) / 2026-11-12",
+   "https://www.segye.com/newsView/20261112515684"
+  ],
+  [
+   "14. 문서 위장 피싱 — [T2] AhnLab ASEC / 2026-11-13",
+   "https://asec.ahnlab.com/ko/96512/"
+  ]
+ ]
+}
